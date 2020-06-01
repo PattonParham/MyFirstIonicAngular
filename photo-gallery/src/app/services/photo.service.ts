@@ -73,7 +73,9 @@ export class PhotoService {
     
     
   }
-  
+  public async deletePhoto(){
+    await Storage.remove({key: this.PHOTO_STORAGE});
+  }
   public async loadSaved() {
     // Retrieve cached photo array data
     const photos = await Storage.get({ key: this.PHOTO_STORAGE });
