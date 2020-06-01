@@ -58,11 +58,7 @@ export class PhotoService {
       quality: 100 
     });
     const savedImageFile = await this.savePicture(capturedPhoto)
-    this.photos.unshift({
-      filepath: "soon...",
-      webviewPath: capturedPhoto.webPath,
-      
-    });
+    this.photos.unshift(savedImageFile);
     Storage.set({
       key: this.PHOTO_STORAGE,
       value: JSON.stringify(this.photos.map(p => {
@@ -77,10 +73,7 @@ export class PhotoService {
     
     
   }
-  public async deleteSaved(){
-    const photos = Storage.remove({key: this.PHOTO_STORAGE});
-    
-  }
+  
   public async loadSaved() {
     // Retrieve cached photo array data
     const photos = await Storage.get({ key: this.PHOTO_STORAGE });
