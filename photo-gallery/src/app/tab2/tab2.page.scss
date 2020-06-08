@@ -1,0 +1,16 @@
+.header{
+    background-color: rgb(187, 122, 84);
+}
+.deletebtn{
+margin-bottom: 50px;
+z-index: 2;
+
+}
+.image{
+    z-index: 1;
+}
+.image:hover{
+    .deletebtn{
+        display: inline;
+    }
+}

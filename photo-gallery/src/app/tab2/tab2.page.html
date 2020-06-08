@@ -1,28 +1,22 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" >
+  <div >
   <ion-toolbar>
-    <ion-title>
+    <ion-title >
       Photo Gallery
     </ion-title>
   </ion-toolbar>
+</div>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
-</ion-content>
 
 <ion-content>
   <ion-grid>
     <ion-row>
     <ion-col size="6" 
       *ngFor="let photo of photoService.photos; index as position">
-      <ion-img src="{{ photo.base64 ? photo.base64 : photo.webviewPath }}"></ion-img>
-      <ion-button class = "deletebtn" (click)="photoService.deletePhoto()"></ion-button>
+      <ion-img class="image" src="{{ photo.base64 ? photo.base64 : photo.webviewPath }}"></ion-img>
+      <ion-button class = "deletebtn" (click)="photoService.deletePhoto()">X</ion-button>
     </ion-col>
     </ion-row>
   </ion-grid>
